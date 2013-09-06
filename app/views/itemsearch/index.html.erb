@@ -8,14 +8,24 @@
 </p>
 
 <% if ! @jsonData.nil? %>
+
 <table>
   <% i = 0 %>
+  <tr>
+    <td>値段</td><td>商品名</td>
+  </tr>
   <% @jsonData['Items'].each do |item| %>
   <tr>
     <% if i % 2 == 0 then%>
-    <td bgcolor="#ffffc0">
+    <td bgcolor='#ffffc0'>
     <% else %>
-    <td bgcolor="#cccccc">
+    <td bgcolor='#cccccc'>
+    <% end %>
+    <%= item['Item']['itemPrice'] %>円</td>
+    <% if i % 2 == 0 then%>
+    <td bgcolor='#ffffc0'>
+    <% else %>
+    <td bgcolor='#cccccc'>
     <% end %>
     <%= link_to item['Item']['itemName'], item['Item']['affiliateUrl'] %></td>
     <% i = i + 1 %>
