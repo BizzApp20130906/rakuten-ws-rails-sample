@@ -9,7 +9,7 @@ HelloWorld
 <% if ! @jsonData.nil? %>
 <ul>
     <% @jsonData['Items'].each do |item| %>
-    <li><%= link_to item['Item']['itemName'], item['Item']['affiliateUrl'] %><%= item['Item']['itemPrice'] %>円</li>
+    <li><%= link_to item['Item']['itemName'], item['Item']['affiliateUrl'] %><%= item['Item']['itemPrice'] %>円<%= (item['Item']['itemPrice'].to_f/99.7605746).round(2) %>$</li>
     <% end %>
 </ul>
 <% end %>
