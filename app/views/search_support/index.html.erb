@@ -9,10 +9,10 @@
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
 
-<% if ! @jsonData.nil? %>
+<% if ! @cateData.nil? %>
 <ul>
-    <% @jsonData['Items'].each do |item| %>
-    <li><%= link_to item['Item']['itemName'], item['Item']['affiliateUrl'] %></li>
+    <% @cateData.each do |key,value| %>
+      <li>ジャンル:<%= key %> 個数:<%= value %></li>
     <% end %>
 </ul>
 <% end %>
